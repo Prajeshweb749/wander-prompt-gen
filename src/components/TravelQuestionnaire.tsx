@@ -107,6 +107,16 @@ const travelQuestions: Question[] = [
     id: 'future_plans',
     question: 'What are your future travel aspirations?',
     options: ['Visit all continents', 'Learn new languages through travel', 'Adventure/extreme travel', 'Luxury travel experiences', 'Digital nomad lifestyle', 'Retirement travel']
+  },
+  {
+    id: 'continent_country_preference',
+    question: 'Which continents and countries are you most interested in visiting?',
+    options: ['Asia (Japan, Thailand, Singapore)', 'Europe (Italy, France, Germany)', 'North America (USA, Canada)', 'South America (Brazil, Peru, Argentina)', 'Africa (Egypt, South Africa, Morocco)', 'Australia/Oceania (Australia, New Zealand)', 'Multiple continents', 'No specific preference']
+  },
+  {
+    id: 'indian_region_preference',
+    question: 'If traveling within India, which regions interest you most?',
+    options: ['North India (Delhi, Punjab, Himachal Pradesh, Uttarakhand)', 'South India (Karnataka, Tamil Nadu, Kerala, Andhra Pradesh)', 'West India (Maharashtra, Gujarat, Goa, Rajasthan)', 'East India (West Bengal, Odisha, Jharkhand)', 'Northeast India (Assam, Meghalaya, Arunachal Pradesh)', 'Central India (Madhya Pradesh, Chhattisgarh)', 'All regions equally', 'Not interested in domestic travel']
   }
 ];
 
