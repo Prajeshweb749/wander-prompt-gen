@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Travel Questionnaire Design System - Modern, minimal with travel-inspired colors */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Travel-inspired color palette */
+    --background: 200 20% 98%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Ocean blue primary */
+    --primary: 200 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Light sky secondary */
+    --secondary: 200 40% 96%;
+    --secondary-foreground: 200 85% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft muted tones */
+    --muted: 200 20% 95%;
+    --muted-foreground: 200 15% 50%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Gentle accent */
+    --accent: 180 60% 92%;
+    --accent-foreground: 180 60% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 200 20% 90%;
+    --input: 200 20% 96%;
+    --ring: 200 85% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Travel-specific design tokens */
+    --travel-ocean: 200 85% 45%;
+    --travel-sky: 200 60% 85%;
+    --travel-sand: 45 40% 92%;
+    --travel-forest: 140 40% 45%;
+    
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(200 85% 45%), hsl(220 85% 55%));
+    --gradient-sky: linear-gradient(180deg, hsl(200 60% 96%), hsl(200 40% 92%));
+    --gradient-subtle: linear-gradient(135deg, hsl(200 20% 98%), hsl(200 30% 96%));
+    
+    /* Shadows */
+    --shadow-travel: 0 10px 40px -15px hsl(200 85% 45% / 0.2);
+    --shadow-card: 0 4px 20px -8px hsl(200 50% 50% / 0.15);
+    --shadow-button: 0 2px 10px -4px hsl(200 85% 45% / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +123,52 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-subtle);
+  }
+}
+
+@layer components {
+  /* Travel-themed component styles */
+  .travel-card {
+    @apply bg-card rounded-xl shadow-[var(--shadow-card)] border border-border/50;
+    transition: var(--transition-smooth);
+  }
+  
+  .travel-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-travel);
+  }
+  
+  .travel-button-primary {
+    @apply bg-primary text-primary-foreground rounded-lg px-6 py-3 font-medium;
+    background: var(--gradient-ocean);
+    box-shadow: var(--shadow-button);
+    transition: var(--transition-spring);
+  }
+  
+  .travel-button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px -6px hsl(200 85% 45% / 0.4);
+  }
+  
+  .travel-checkbox {
+    @apply appearance-none w-5 h-5 border-2 border-border rounded-md bg-background;
+    transition: var(--transition-smooth);
+  }
+  
+  .travel-checkbox:checked {
+    @apply bg-primary border-primary;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='m13.854 3.646-6 6a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 8.293l5.646-5.647a.5.5 0 0 1 .708.708z'/%3e%3c/svg%3e");
+  }
+  
+  .travel-progress {
+    @apply w-full h-2 bg-muted rounded-full overflow-hidden;
+  }
+  
+  .travel-progress-fill {
+    @apply h-full rounded-full;
+    background: var(--gradient-ocean);
+    transition: var(--transition-smooth);
   }
 }

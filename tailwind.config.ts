@@ -61,6 +61,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				/* Travel theme extensions */
+				travel: {
+					ocean: 'hsl(var(--travel-ocean))',
+					sky: 'hsl(var(--travel-sky))',
+					sand: 'hsl(var(--travel-sand))',
+					forest: 'hsl(var(--travel-forest))'
 				}
 			},
 			borderRadius: {
